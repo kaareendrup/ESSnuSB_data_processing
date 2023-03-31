@@ -1,6 +1,6 @@
 
 import os
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 from collections import OrderedDict
 
 import numpy as np
@@ -12,7 +12,7 @@ import sqlalchemy
 from utils import run_sql_code
 
 
-def merge_databases(file_dir: str, output_name: str, n_files: int, input_name: str = None, n_chunks: int=1):
+def merge_databases(file_dir: str, output_name: str, n_files: int, input_name: Optional[str] = None, n_chunks: Optional[int] = 1):
 
     if input_name is None:
         input_name = output_name
