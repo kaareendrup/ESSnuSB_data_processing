@@ -1,0 +1,12 @@
+__pycache__
+.DS_Store
+*.out
+logs
+*.log
+*.o
+*.so
+*.sh
+*.d
+*.pcm
+*.slurm
+*.{1}
