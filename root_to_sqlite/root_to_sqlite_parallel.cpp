@@ -363,7 +363,6 @@ int addEvent(sqlite3* DB, const Char_t* file_name, int exit, Int_t event, Int_t 
   
   // Get PMT hits info
   Int_t n_pmt = (Int_t)pmt_array->GetEntries();
-  // if (n_pmt == 0 and drop_empty){
   if (n_pmt == 0 && drop_empty){
     cout << "Inserting event: " << event << " of " << n_event << " with event_no: " << event_no << endl;
     cout << "Number of PMT signals: " << n_pmt << endl;
