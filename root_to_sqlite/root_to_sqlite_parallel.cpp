@@ -191,10 +191,10 @@ void root_to_sqlite(string path, const char* dir, int p, int n_start, int n_file
     for (Int_t i=0; i<no_events; i++){
 
       // Add the event to the database
-      event_no = p*1e6 + j*1e4 + i;
+      event_no = p*1e7 + j*1e4 + i;
       e_t = addEvent(DB, rootFile.c_str(), exit, i, event_no, drop_empty, verbose);
       if (e_t != 0){
-        cout << endl << "Error found, stopping" << endl;
+        cerr << endl << "Error found, stopping" << endl;
         break;
       }
     }
@@ -204,7 +204,7 @@ void root_to_sqlite(string path, const char* dir, int p, int n_start, int n_file
     
     if (exit != SQLITE_OK) {
       cerr << "Error in commit transaction." << endl;
-      cout << "Error message: " << errorMessage << endl;
+      cerr << "Error message: " << errorMessage << endl;
       sqlite3_free(errorMessage);
     }
 
@@ -241,10 +241,10 @@ int createTable(const char* s, string tablename, string *sql, bool is_pulsemap)
 		/* An open database, SQL to be evaluated, Callback function, 1st argument to callback, Error msg written here */
 		exit = sqlite3_exec(DB, sql_str.c_str(), NULL, 0, &messageError);
 		if (exit != SQLITE_OK) {
-      cout << "Attempting sql query:" << endl;
-      cout << sql_str << endl;
+      cerr << "Attempting sql query:" << endl;
+      cerr << sql_str << endl;
 			cerr << "Error in createTable function." << endl;
-      cout << "Error message: " << messageError << endl;
+      cerr << "Error message: " << messageError << endl;
 			sqlite3_free(messageError);
 		}
 		else
@@ -265,10 +265,10 @@ int createTable(const char* s, string tablename, string *sql, bool is_pulsemap)
       /* An open database, SQL to be evaluated, Callback function, 1st argument to callback, Error msg written here */
       exit = sqlite3_exec(DB, index_str.c_str(), NULL, 0, &messageError);
       if (exit != SQLITE_OK) {
-        cout << "Attempting sql query:" << endl;
-        cout << index_str << endl;
-        cerr << "Error in createTable function." << endl;
-        cout << "Error message: " << messageError << endl;
+        cerr << "Attempting sql query:" << endl;
+        cerr << index_str << endl;
+        cerr << "Error in create index function." << endl;
+        cerr << "Error message: " << messageError << endl;
         sqlite3_free(messageError);
       }
       else
@@ -293,10 +293,10 @@ int insertData(sqlite3* DB, int exit, string *sql)
 	/* An open database, SQL to be evaluated, Callback function, 1st argument to callback, Error msg written here */
 	exit = sqlite3_exec(DB, sql_str.c_str(), NULL, 0, &messageError);
 	if (exit != SQLITE_OK) {
-    cout << "Attempting sql query:" << endl;
-    cout << sql_str << endl;
+    cerr << "Attempting sql query:" << endl;
+    cerr << sql_str << endl;
 		cerr << "Error in insertData function." << endl;
-    cout << "Error message: " << messageError << endl;
+    cerr << "Error message: " << messageError << endl;
 		sqlite3_free(messageError);
     return 1;
 	}
@@ -317,8 +317,8 @@ int clearData(const char* s, string tablename)
 	/* An open database, SQL to be evaluated, Callback function, 1st argument to callback, Error msg written here */
 	exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
 	if (exit != SQLITE_OK) {
-    cout << "Attempting sql query:" << endl;
-    cout << sql << endl;
+    cerr << "Attempting sql query:" << endl;
+    cerr << sql << endl;
 		cerr << "Error in deleteData function." << endl;
 		sqlite3_free(messageError);
     sqlite3_close(DB);
