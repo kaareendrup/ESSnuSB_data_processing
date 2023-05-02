@@ -37,7 +37,7 @@ int addEvent(sqlite3* DB, const Char_t* file_name, int exit, Int_t event, Int_t 
 void root_to_sqlite(string path, const char* dir, int p, int n_start, int n_files, int n_total=120, string sim_type="genieflat", bool drop_empty=true, bool verbose=false)
 {
 
-  // Initialize sqlite stringsex
+  // Initialize sqlite strings
   string truth_sql = "CREATE TABLE IF NOT EXISTS truth("
       "event_no   INTEGER PRIMARY KEY NOT NULL, "
       "particle_sign      INTEGER, "
