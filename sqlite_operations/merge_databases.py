@@ -161,8 +161,8 @@ if __name__=='__main__':
 
 
     file_dir = "/home/kaare/snic2022-23-570/ESSnuSB/databases/"
-    database_name = "ESSnuSB_chlep02"
-    n_files = 4
+    database_name = "ESSnuSB_all_events"
+    n_files = 8
     n_chunks = 10
 
     merge_databases(file_dir, database_name, n_files, n_chunks=n_chunks)

@@ -71,6 +71,10 @@ fiTQunInfo::fiTQunInfo()
     fqmu_dz(-10000),
     fqpi_dz(-10000),
 
+    fqe_theta(-10000),
+    fqmu_theta(-10000),
+    fqpi_theta(-10000),
+
     fqe_nll(-10000),
     fqmu_nll(-10000),
     fqpi_nll(-10000),

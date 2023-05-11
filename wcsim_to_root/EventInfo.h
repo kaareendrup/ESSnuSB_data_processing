@@ -130,6 +130,10 @@ class fiTQunInfo : public TObject
   Double_t Get_fqmu_dz() const { return fqmu_dz; }
   Double_t Get_fqpi_dz() const { return fqpi_dz; }
 
+  Double_t Get_fqe_theta() const { return fqe_theta; }
+  Double_t Get_fqmu_theta() const { return fqmu_theta; }
+  Double_t Get_fqpi_theta() const { return fqpi_theta; }
+
   // pid negative LLH
   Double_t Get_fqe_nll() const { return fqe_nll; }
   Double_t Get_fqmu_nll() const { return fqmu_nll; }
@@ -170,6 +174,10 @@ class fiTQunInfo : public TObject
   void Set_fqe_dz(Double_t value) { fqe_dz = value; }
   void Set_fqmu_dz(Double_t value) { fqmu_dz = value; }
   void Set_fqpi_dz(Double_t value) { fqpi_dz = value; }
+
+  void Set_fqe_theta(Double_t value) { fqe_theta = value; }
+  void Set_fqmu_theta(Double_t value) { fqmu_theta = value; }
+  void Set_fqpi_theta(Double_t value) { fqpi_theta = value; }
 
   // pid negative LLH
   void Set_fqe_nll(Double_t value) { fqe_nll = value; }
@@ -215,6 +223,10 @@ class fiTQunInfo : public TObject
   Double_t fqe_dz;
   Double_t fqmu_dz;
   Double_t fqpi_dz;
+
+  Double_t fqe_theta;
+  Double_t fqmu_theta;
+  Double_t fqpi_theta;
 
   // pid negative LLH
   Double_t fqe_nll;

@@ -417,6 +417,10 @@ void fill_fitqun(ifstream *infile, fiTQunInfo *event)
   double fqmu_dz = fitqun_map.find("fqmu_dz")->second;
   double fqpi_dz = fitqun_map.find("fqpi_dz")->second;
 
+  double fqe_theta = fitqun_map.find("fqe_theta")->second;
+  double fqmu_theta = fitqun_map.find("fqmu_theta")->second;
+  double fqpi_theta = fitqun_map.find("fqpi_theta")->second;
+
   double fqe_nll = fitqun_map.find("fqe_nll")->second;
   double fqmu_nll = fitqun_map.find("fqmu_nll")->second;
   double fqpi_nll = fitqun_map.find("fqpi_nll")->second;
@@ -455,6 +459,10 @@ void fill_fitqun(ifstream *infile, fiTQunInfo *event)
   event->Set_fqe_dz(fqe_dz);
   event->Set_fqmu_dz(fqmu_dz);
   event->Set_fqpi_dz(fqpi_dz);
+
+  event->Set_fqe_theta(fqe_theta);
+  event->Set_fqmu_theta(fqmu_theta);
+  event->Set_fqpi_theta(fqpi_theta);
 
   // pid negative LLH
   event->Set_fqe_nll(fqe_nll);
